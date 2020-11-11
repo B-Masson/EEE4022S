@@ -27,7 +27,7 @@ def getWavFiles(path):
     folders = readData(path)
     wav_files = []
     for folder in folders:
-        wav_names = readWav(path+"\\"+folder)
+        wav_names = readWav(path+"//"+folder)
         wav_files_folder = [os.path.join(folder,(f+".wav")) for f in wav_names]
         wav_files.append(wav_files_folder)
     print("Successfully found wav files.")
@@ -57,9 +57,9 @@ def extractData(path):
     ideal_shape = (128, 44) #Shape size everything must conform to
     for folder_set in file_set:
         for data in folder_set:
-            y_string = data.split("\\")[0]
+            y_string = data.split("//")[0]
             y_list.append(diction.get(y_string, y_string))
-            appendix = getMelFeature(path+"\\"+data)
+            appendix = getMelFeature(path+"//"+data)
             appendix = np.array(appendix)
             if appendix.shape != ideal_shape:
                 if (appendix.shape[0] < 128 or appendix.shape[1] < 44):

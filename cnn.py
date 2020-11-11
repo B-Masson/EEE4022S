@@ -165,8 +165,8 @@ if (choice == 'y' or choice == 'c'):
   if (choice == 'c'):
     params_path = "Parameter_Backups" #Hard coding for now since I always use the same alt. folder
     params_file = input("Enter parameter file name:\n")
-  model.save(params_path+"\\"+params_file)
-  f = open(params_path+"\\"+params_file+"_info.txt", "w")
+  model.save(params_path+"//"+params_file)
+  f = open(params_path+"//"+params_file+"_info.txt", "w")
   text = "Parameter information:\nFolder used: %s\nAccuracy: %.2f\nTotal time: %.2f\nLogged: " % (train_path, accuracy*100, time_total)
   now = datetime.datetime.now()
   text += now.strftime("%Y-%m-%d %H:%M:%S")
@@ -188,7 +188,7 @@ secondary = input("Would you like to save training metrics? (y/n)\n")
 if (secondary == 'y'):
   loss = hist.history['loss']
   acc = hist.history['accuracy']
-  m = open("Graphing"+"\\"+train_path+"_metrics.csv", "w")
+  m = open("Graphing"+"//"+train_path+"_metrics.csv", "w")
   metrictext = "Epoch,Loss,Accuracy"
   for i in range(epochnum):
     metrictext += "\n%d,%.4f,%.4f" % (i+1, loss[i], acc[i])
