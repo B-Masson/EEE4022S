@@ -17,3 +17,4 @@ Follow his instructions exactly. Then place voice_command.py into the scripts fo
 
 Notes:
 vocalengine.py > Take note of whether you're enabling trimming or not. Only needed if recording duraiton set to > 1 in recordaudioL.
+I have no uploaded pre-trained parameters since those are actually much bigger files than you would think.
