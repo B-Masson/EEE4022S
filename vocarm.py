@@ -22,7 +22,7 @@ while True:
 		# Next line requires that it point to the location of voice_command.py
         commandline = "/home/richard/ros_ws/src/arm_bringup/scripts/voice_command.py " +str(pred)
         tic = time.perf_counter()
-        os.system(commandline)
+        os.system(commandline) # Comment me out to disable simulation subsystem
         toc = time.perf_counter()
         runtime = round((toc-tic),4)
         print("Pre-processing time:", pretime)
